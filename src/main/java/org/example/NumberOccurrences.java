@@ -19,6 +19,10 @@ public class NumberOccurrences {
         int countParallel = pool.invoke(new ParallelNumberOccurrences(array, _TARGET));
         finish = System.currentTimeMillis();
         System.out.println("Parallel count: " + countParallel + ", time: " + (finish - launch) + " ms");
+        launch = System.currentTimeMillis();
+        int countStreamSerial = new StreamSerialNumberOccurrences().countOccurrences(array, _TARGET);
+        finish = System.currentTimeMillis();
+        System.out.println("Stream serial count: " + countStreamSerial + ", time: " + (finish - launch) + " ms");
     }
     private static int[] generateArray() {
         int[] array = new int[_ARRAY_SIZE];
