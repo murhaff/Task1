@@ -23,6 +23,10 @@ public class NumberOccurrences {
         int countStreamSerial = new StreamSerialNumberOccurrences().countOccurrences(array, _TARGET);
         finish = System.currentTimeMillis();
         System.out.println("Stream serial count: " + countStreamSerial + ", time: " + (finish - launch) + " ms");
+        launch = System.currentTimeMillis();
+        int countStreamParallel = new StreamParallelNumberOccurrences().countOccurrences(array, _TARGET);
+        finish = System.currentTimeMillis();
+        System.out.println("Stream parallel count: " + countStreamParallel + ", time: " + (finish - launch) + " ms");
     }
     private static int[] generateArray() {
         int[] array = new int[_ARRAY_SIZE];
